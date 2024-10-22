@@ -1,4 +1,6 @@
+import 'package:employeemanagement/screens/get_employees.dart';
 import 'package:employeemanagement/screens/register_employee.dart';
+import 'package:employeemanagement/screens/update_employee.dart';
 import 'package:flutter/material.dart';
 
 class EmployeeDrawer extends StatefulWidget {
@@ -27,24 +29,24 @@ class _EmployeeDrawerState extends State<EmployeeDrawer> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Employee Management'),
+        title: Text('Gestion des Employés'),
       ),
       body: const Center(
-        child: Text("Welcome"),
+        child: Text("Bienvenue sur la page des employés"),
       ),
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.only(top: minimumPadding, bottom: minimumPadding),
           children: <Widget>[
             const DrawerHeader(
-              child: Text("Employee Management"),
+              child: Text("Gestion des employés"),
               decoration: BoxDecoration(
                 color: Colors.blue,
               ),
             ),
             ListTile(
               leading: const Icon(Icons.person),
-              title: const Text('Register '),
+              title: const Text('Connexion '),
               onTap: () {
                 Navigator.push(
                   context,
@@ -56,18 +58,32 @@ class _EmployeeDrawerState extends State<EmployeeDrawer> {
             ),
             ListTile(
               leading: Icon(Icons.search),
-              title: Text('Search'),
-              onTap: _iconSeach,
+              title: Text('Ajout'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => GetEmployees(),
+                  ),
+                );
+              },
             ),
             ListTile(
               leading: Icon(Icons.add),
-              title: Text('Add'),
-              onTap: _iconAdd,
+              title: Text('Recherche'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => UpdateEmployees(),
+                  ),
+                );
+              },
             ),
             Divider(),
             ListTile(
               leading: Icon(Icons.logout),
-              title: Text('Logout'),
+              title: Text('Deconnexion'),
               onTap: () {},
             ),
           ],

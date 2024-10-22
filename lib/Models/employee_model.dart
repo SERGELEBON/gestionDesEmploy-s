@@ -21,9 +21,9 @@ class EmployeeModel {
       );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'first_name': firstName,
-        'last_name': lastName,
+        "id": id,
+        "first_name": firstName,
+        "last_name": lastName,
       };
   String get fullName => '$firstName $lastName';
   bool get isManager => lastName.toLowerCase().contains('manager');

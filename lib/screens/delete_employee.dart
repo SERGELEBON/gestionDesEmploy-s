@@ -1,8 +1,9 @@
+import 'package:employeemanagement/Models/employee_model.dart';
 import 'package:employeemanagement/screens/get_employees.dart';
 import 'package:flutter/material.dart';
 
 class DeleteEmployees extends StatefulWidget {
-  DeleteEmployees({super.key});
+  DeleteEmployees(EmployeeModel employee, {super.key});
 
   @override
   State<DeleteEmployees> createState() => _DeleteEmployeesState();
